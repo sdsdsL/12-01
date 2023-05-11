@@ -38,123 +38,62 @@
 - ...
 - идентификатор структурного подразделения, внешний ключ, integer).
 
+____
 
 **Ответ:**
 
-1. ФИО - ФИО сотрудника (varchar)
+Сотрудники ( 
 
-2. Оклад - З/П сотрудника (decimal/numeric)
+- идентификатор, первичный ключ, n-сотрудника, serial
+- фамилия varchar(50)
+- должность id , integer
+- дата найма (date)
+- id_проекта, внешний ключ, integer
+- филиал и проект, integer
+) 
 
-3. Должность - Должность, занимаемая сотрудником (varchar)
+Должность(
 
-4. Тип подразделения - Отдел в котором работает сотрудник (varchar)
-
-5. Дата - Дата найма сотрудника, дата и время (tinyint)
-
-6. Адрес - Местоположение филиала (varchar)
-
-7. Проект - название проекта (varchar)
-
-
-staff (
-
-staff_id primary_key,
-
-FName VARCHAR(50) ,
-
-LName VARCHAR(50) ,
-
-Patronymic varchar(50),
-
-divisions_id varchar(50),
-
-Structura_id varchar(50),
-
-date_off_id datetime,
-
-position_id varchar(50),
-
-salary_id numeric,
-
-address_id VARCHAR(50),
-
-project_id VARCHAR(50),
-
-)
-
-salary (
-
-salary_id primary_key
-
-pay numeric
-
-)
-
-position (
-
-position_id primary_key
-
-spethion_type
-
-)
-
-divisions (
-
-divisions_id primary_key
-
-department varchar(50)
-
-Unit Group varchar(50)
-
-Unit Group_type
-
-department_type
-
-)
-
-Structura (
-
-Structura_id primary_key
-
-Group varchar(50)
-
-Structura_type
-
-Structura_title
-
-)
-
-date_off_Employee )
-
-date_off_id primary_key
-
-date datetime
-
-(
-
-branch address (
-
-address_id primary_key
-
-age VARCHAR(50)
-
-city VARCHAR(50)
-
-street VARCHAR(50)
-
-house VARCHAR(50)
-
-)
-
-project (
-
-project_id primary_key
-
-project_type
+- должность id, первичный ключ, integer
+- должность varchar(50)
+- id подразделения, внешний ключ, integer
+- оклад, integer
 
 )
 
 
+Тип подразделения (
+
+- id подразделения, первичный ключ, integer
+- тип подразделения integer
+- id структурное подразделение, внешний ключ, integer 
+
+)
+
+Структурное подразделение (
+- id структурное подразделение, первичный ключ, integer
+- имя структурного подразделения, varchar(50)
+)
+
+Адрес филиала (
+
+- адрес id, первичный ключ, integer
+- адрес varchar 50
+
+)
+
+Проект на который назначен (
+
+- id_проекта, первичный ключ, integer
+- проект на который назначен varchar(100)
+
+)
+
+Филиал и проект (
+- id филиала и проекта, первичный ключ, integer
+- адрес филиала, integer
+- проект на который назначен, integer
+)
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
 
